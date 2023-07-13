@@ -1,5 +1,5 @@
 import { UniversityContainer } from '../../CVsettings/settingsBlock/education/universityContainer/UniversityContainer';
-import { PreviousWorkContainer } from '../../CVsettings/settingsBlock/experience/previousWorkContainer/previousWorkContainer';
+import { PreviousWorkContainer } from '../../CVsettings/settingsBlock/experience/previousWorkContainer/PreviousWorkContainer';
 import cl from './overallData.module.scss';
 
 export function OverallData({ data }) {
@@ -18,7 +18,7 @@ export function OverallData({ data }) {
         {experienceArr.map((work, i) => (
           <PreviousWorkContainer
             experience={work}
-            key={Date.now()}
+            key={crypto.randomUUID()}
           ></PreviousWorkContainer>
         ))}
       </div>
@@ -28,7 +28,7 @@ export function OverallData({ data }) {
         {educationArr.map((university) => (
           <UniversityContainer
             education={university}
-            key={Date.now()}
+            key={crypto.randomUUID()}
           ></UniversityContainer>
         ))}
       </div>

@@ -22,7 +22,7 @@ export function PersonalData({ personalData }) {
         <div className={cl.detailsItem}>
           <div className={cl.itemTitle}>Address</div>
           <div className={cl.itemData} id={cl.addressData}>
-            {personalData.address}
+            {personalData.location}
           </div>
         </div>
       </div>

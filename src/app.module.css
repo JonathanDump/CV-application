@@ -1,0 +1,7 @@
+.app {
+  display: flex;
+  flex-direction: column;
+}
+.app .main {
+  display: flex;
+}/*# sourceMappingURL=app.module.css.map */

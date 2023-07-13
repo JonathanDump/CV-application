@@ -15,7 +15,16 @@ function App() {
       email: '',
       description: '',
     },
-    experience: [],
+    experience: [
+      {
+        id: crypto.randomUUID(),
+        position: '',
+        company: '',
+        city: '',
+        from: '',
+        to: '',
+      },
+    ],
     education: [],
   });
   return (

@@ -1,14 +1,15 @@
 import cl from './infoContainer.module.scss';
 
-export function InfoContainer({ category, experience, education }) {
+export function InfoContainer({ category, experience, education, id }) {
   if (category === 'work') {
+    const work = experience.find((work) => work.id === id);
     return (
       <div className={cl.infoContainer}>
         <div className={cl.year}>
-          {experience.from} - {experience.to}
+          {work.from} - {work.to}
         </div>
-        <div className={cl.boldRow}>{experience.position}</div>
-        <div className={cl.row}>{experience.company}</div>
+        <div className={cl.boldRow}>{work.position}</div>
+        <div className={cl.row}>{work.company}</div>
       </div>
     );
   }

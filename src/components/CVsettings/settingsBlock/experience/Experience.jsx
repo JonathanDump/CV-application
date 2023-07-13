@@ -2,11 +2,16 @@ import { PreviousWorkContainer } from './previousWorkContainer/PreviousWorkConta
 import cl from './experience.module.scss';
 import style from '/src/scss/modules/button.module.scss';
 
-export function Experience() {
+export function Experience({ data, setData }) {
   return (
     <div className={cl.experience}>
       <div className={cl.title}>Experience</div>
-      <PreviousWorkContainer side={'left'}></PreviousWorkContainer>
+      <PreviousWorkContainer
+        side={'left'}
+        data={data}
+        setData={setData}
+        id={crypto.randomUUID()}
+      ></PreviousWorkContainer>
       <button type="button" className={style.button}>
         Add
       </button>
