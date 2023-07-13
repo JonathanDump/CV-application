@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { InputContainer } from '../../inputContainer/InputContainer';
+import { useState } from "react";
+import { InputContainer } from "../../inputContainer/InputContainer";
 
-import cl from './personalInfo.module.scss';
+import cl from "./personalInfo.module.scss";
+import { render } from "react-dom";
 
 export function PersonalInfo({ data, setData }) {
   const personalInfo = data.personalInfo;
@@ -35,12 +36,24 @@ export function PersonalInfo({ data, setData }) {
         inputClass="photo"
         label="Photo"
         type="file"
-        handleChange={(e) =>
-          setData({
-            ...data,
-            personalInfo: { ...personalInfo, photo: e.target.value },
-          })
-        }
+        handleChange={(e) => {
+          const file = e.target.files[0];
+
+          if (!file) {
+            return;
+          }
+
+          const reader = new FileReader();
+          reader.onload = () => {
+            console.log(reader.result);
+            setData({
+              ...data,
+              personalInfo: { ...personalInfo, photo: reader.result },
+            });
+          };
+
+          reader.readAsDataURL(file);
+        }}
       ></InputContainer>
 
       <InputContainer

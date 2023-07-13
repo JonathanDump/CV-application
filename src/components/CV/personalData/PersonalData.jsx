@@ -1,9 +1,11 @@
-import cl from './personalData.module.scss';
+import cl from "./personalData.module.scss";
 
 export function PersonalData({ personalData }) {
   return (
     <div className={cl.personalData}>
-      <div className={cl.imageContainer}></div>
+      <div className={cl.imageContainer}>
+        <img src={personalData.photo} alt="" />
+      </div>
 
       <div className={cl.details}>
         <div className={cl.title}>Personal details</div>
