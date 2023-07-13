@@ -4,7 +4,7 @@ import cl from './overallData.module.scss';
 
 export function OverallData({ data }) {
   const description = data.personalInfo.description;
-  const experienceArr = data.experience;
+  const experienceArr = [...data.experience];
   const educationArr = data.education;
   return (
     <div className={cl.overallData} id={cl.experience}>
@@ -15,23 +15,25 @@ export function OverallData({ data }) {
 
       <div className={cl.dataBlock}>
         <div className={cl.title}>Experience</div>
-        {experienceArr.map((work, i) => (
+        {experienceArr.map((work) => (
           <PreviousWorkContainer
-            experience={work}
-            key={crypto.randomUUID()}
+            work={work}
+            key={work.id}
+            id={work.id}
           ></PreviousWorkContainer>
         ))}
       </div>
 
-      <div className={cl.dataBlock} id={cl.education}>
+      {/* <div className={cl.dataBlock} id={cl.education}>
         <div className={cl.title}>Education</div>
         {educationArr.map((university) => (
           <UniversityContainer
-            education={university}
-            key={crypto.randomUUID()}
+            university={university}
+            key={university.id}
+            id={university.id}
           ></UniversityContainer>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -13,14 +13,10 @@ export function Experience({ data, setData }) {
           setData={setData}
           id={work.id}
           key={work.id}
+          work={work}
         />
       ))}
-      {/* <PreviousWorkContainer
-        side={'left'}
-        data={data}
-        setData={setData}
-        id={crypto.randomUUID()}
-      ></PreviousWorkContainer> */}
+
       <button type="button" className={style.button}>
         Add
       </button>

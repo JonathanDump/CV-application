@@ -27,7 +27,9 @@ function App() {
     ],
     education: [],
   });
-  useEffect(() => console.log(data), [data]);
+  useEffect(() => {
+    console.log('app data', data);
+  }, [data]);
 
   return (
     <div className={cl.app}>

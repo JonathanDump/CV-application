@@ -1,8 +1,10 @@
+import { format, parseISO } from 'date-fns';
 import cl from './infoContainer.module.scss';
 
-export function InfoContainer({ category, experience, education, id }) {
+export function InfoContainer({ category, work, university }) {
   if (category === 'work') {
-    const work = experience.filter((work) => work.id === id)[0];
+    // console.log('info container', format(parseISO(work.from), 'MMM YYYY'));
+
     return (
       <div className={cl.infoContainer}>
         <div className={cl.year}>
@@ -10,18 +12,19 @@ export function InfoContainer({ category, experience, education, id }) {
         </div>
         <div className={cl.boldRow}>{work.position}</div>
         <div className={cl.row}>{work.company}</div>
+        <div className={cl.row}>{work.city}</div>
       </div>
     );
   }
 
-  return (
-    <div className={cl.infoContainer}>
-      <div className={cl.year}>
-        {education.from} - {education.to}
-      </div>
-      <div className={cl.boldRow}>{education.university}</div>
-      <div className={cl.row}>Degree: {education.degree}</div>
-      <div className={cl.row}>Subject: {education.subject}</div>
-    </div>
-  );
+  // return (
+  //   <div className={cl.infoContainer}>
+  //     <div className={cl.year}>
+  //       {university.from} - {university.to}
+  //     </div>
+  //     <div className={cl.boldRow}>{university.university}</div>
+  //     <div className={cl.row}>Degree: {university.degree}</div>
+  //     <div className={cl.row}>Subject: {university.subject}</div>
+  //   </div>
+  // );
 }
