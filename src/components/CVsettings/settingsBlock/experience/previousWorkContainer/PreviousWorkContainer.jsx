@@ -4,11 +4,12 @@ import cl from './previousWorkContainer.module.scss';
 import style from '/src/scss/modules/button.module.scss';
 
 export function PreviousWorkContainer({ side, data, setData, id }) {
+  debugger;
+  console.log('before if', data);
   if (side === 'left') {
-    const work = data.experience.find((work) => work.id === id);
-    console.log(data);
-    console.log(data.experience);
-    console.log(work);
+    const work = data.experience.filter((work) => work.id === id)[0];
+    console.log('inside if', data);
+
     return (
       <div className={cl.previousWorkContainer}>
         <InputContainer
@@ -17,7 +18,12 @@ export function PreviousWorkContainer({ side, data, setData, id }) {
           type="text"
           handleChange={(e) => {
             work.position = e.target.value;
-            setData({ ...data });
+            const experience = [...data.experience].map((w) => {
+              if (w.id === id) {
+                return { ...work, position: e.target.value };
+              }
+            });
+            setData({ ...data, experience: experience });
           }}
         />
 
@@ -37,12 +43,12 @@ export function PreviousWorkContainer({ side, data, setData, id }) {
       </div>
     );
   }
-
+  console.log('after if', data);
   return (
     <div className={cl.previousWorkContainer}>
       <InfoContainer
         side={'work'}
-        experience={data.experience}
+        experience={data?.experience}
         id={id}
       ></InfoContainer>
     </div>

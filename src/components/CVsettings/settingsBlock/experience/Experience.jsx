@@ -6,12 +6,21 @@ export function Experience({ data, setData }) {
   return (
     <div className={cl.experience}>
       <div className={cl.title}>Experience</div>
-      <PreviousWorkContainer
+      {data.experience.map((work) => (
+        <PreviousWorkContainer
+          side={'left'}
+          data={data}
+          setData={setData}
+          id={work.id}
+          key={work.id}
+        />
+      ))}
+      {/* <PreviousWorkContainer
         side={'left'}
         data={data}
         setData={setData}
         id={crypto.randomUUID()}
-      ></PreviousWorkContainer>
+      ></PreviousWorkContainer> */}
       <button type="button" className={style.button}>
         Add
       </button>

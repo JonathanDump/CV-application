@@ -2,7 +2,7 @@ import cl from './infoContainer.module.scss';
 
 export function InfoContainer({ category, experience, education, id }) {
   if (category === 'work') {
-    const work = experience.find((work) => work.id === id);
+    const work = experience.filter((work) => work.id === id)[0];
     return (
       <div className={cl.infoContainer}>
         <div className={cl.year}>
