@@ -4,6 +4,7 @@ import { Education } from './education/Education';
 import cl from './settings.module.scss';
 
 export function Settings({ data, setData }) {
+  console.log('settings', data);
   return (
     <div className={cl.settingsBlock}>
       <div className={cl.settings}>

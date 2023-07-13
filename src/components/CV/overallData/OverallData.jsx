@@ -19,7 +19,6 @@ export function OverallData({ data }) {
           <PreviousWorkContainer
             work={work}
             key={work.id}
-            id={work.id}
           ></PreviousWorkContainer>
         ))}
       </div>

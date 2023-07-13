@@ -1,23 +1,19 @@
+import {
+  deleteFromState,
+  updateState,
+} from '../../../../../functions/functions';
 import { InfoContainer } from '../../../../CV/overallData/infoContainer/infoContainer';
 import { InputContainer } from '../../../inputContainer/InputContainer';
 import cl from './previousWorkContainer.module.scss';
 import style from '/src/scss/modules/button.module.scss';
 
-export function PreviousWorkContainer({ side, work, setData, id, data }) {
+export function PreviousWorkContainer({ side, work, setData, data }) {
   // debugger;
-  console.log('before if', data);
-  console.log('work', work);
+  // console.log('before if', data);
+  // console.log('work', work);
 
-  function updateState(e, attr) {
-    const experience = [...data.experience].map((w) => {
-      if (w.id === id) {
-        return { ...work, [attr]: e.target.value };
-      }
-    });
-    setData({ ...data, experience: experience });
-  }
   if (side === 'left') {
-    console.log('inside if', data);
+    // console.log('inside if', data);
 
     return (
       <div className={cl.previousWorkContainer}>
@@ -25,52 +21,48 @@ export function PreviousWorkContainer({ side, work, setData, id, data }) {
           value={work.position}
           label="Position"
           type="text"
-          // handleChange={(e) => {
-          //   const experience = [...data.experience].map((w) => {
-          //     if (w.id === id) {
-          //       return { ...work, position: e.target.value };
-          //     }
-          //   });
-          //   setData({ ...data, experience: experience });
-          // }}
-          handleChange={(e) => updateState(e, 'position')}
+          handleChange={(e) => updateState(e, 'position', data, work, setData)}
         />
 
         <InputContainer
           value={work.company}
           label="Company"
           type="text"
-          handleChange={(e) => updateState(e, 'company')}
+          handleChange={(e) => updateState(e, 'company', data, work, setData)}
         />
 
         <InputContainer
           value={work.city}
           label="City"
           type="text"
-          handleChange={(e) => updateState(e, 'city')}
+          handleChange={(e) => updateState(e, 'city', data, work, setData)}
         />
 
         <InputContainer
           value={work.from}
           label="From"
           type="month"
-          handleChange={(e) => updateState(e, 'from')}
+          handleChange={(e) => updateState(e, 'from', data, work, setData)}
         />
 
         <InputContainer
           value={work.to}
           label="To"
           type="month"
-          handleChange={(e) => updateState(e, 'to')}
+          handleChange={(e) => updateState(e, 'to', data, work, setData)}
         />
 
-        <button type="button" className={style.button}>
+        <button
+          type="button"
+          className={style.button}
+          onClick={() => deleteFromState(work, data, setData)}
+        >
           Delete
         </button>
       </div>
     );
   }
-  console.log('after if', data);
+  // console.log('after if', data);
   // if (!data) {
   //   return;
   // }

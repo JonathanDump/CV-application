@@ -25,7 +25,17 @@ function App() {
         to: '',
       },
     ],
-    education: [],
+    education: [
+      {
+        id: crypto.randomUUID(),
+        university: '',
+        city: '',
+        degree: '',
+        subject: '',
+        from: '',
+        to: '',
+      },
+    ],
   });
   useEffect(() => {
     console.log('app data', data);
