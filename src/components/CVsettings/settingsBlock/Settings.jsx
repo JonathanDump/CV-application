@@ -1,10 +1,9 @@
-import { PersonalInfo } from './personalInfo/PersonalInfo';
-import { Experience } from './experience/Experience';
-import { Education } from './education/Education';
-import cl from './settings.module.scss';
+import { PersonalInfo } from "./personalInfo/PersonalInfo";
+import { Experience } from "./experience/Experience";
+import { Education } from "./education/Education";
+import cl from "./settings.module.scss";
 
 export function Settings({ data, setData }) {
-  console.log('settings', data);
   return (
     <div className={cl.settingsBlock}>
       <div className={cl.settings}>

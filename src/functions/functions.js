@@ -1,22 +1,43 @@
-export function updateState(e, attr, data, work, setData) {
-  const experience = [...data.experience].map((w) => {
+export function updateState(e, attr, data, object, setData, category) {
+  if (category === 'work') {
+   const experience = [...data.experience].map((w) => {
     
-    if (w.id === work.id) {
-      return { ...work, [attr]: e.target.value };
+    if (w.id === object.id) {
+      return { ...object, [attr]: e.target.value };
     } else {
 
     return w
     }
   });
-  setData({ ...data, experience: experience });
+    setData({ ...data, experience: experience }); 
+    return
+  }
+  
+const education = [...data.education].map((ed) => {
+    
+    if (ed.id === object.id) {
+      return { ...object, [attr]: e.target.value };
+    } else {
+
+    return ed
+    }
+  });
+    setData({ ...data, education: education }); 
 }
 
-export function deleteFromState(obj, data, setData) {
-  const experience = [...data.experience].filter((w) => w.id !== obj.id);
-  setData({ ...data, experience: experience });
+export function deleteFromState( obj, data, setData, category) {
+  if (category === 'work') {
+    const experience = [...data.experience].filter((w) => w.id !== obj.id);
+    setData({ ...data, experience: experience });
+    return
+  }
+  console.log('deleteFrom',data);
+  const education = [...data.education].filter((ed) => ed.id !== obj.id);
+    setData({ ...data, education: education });
+
 }
 
-export function addToState(category, data, setData) {
+export function addToState( data, setData, category) {
   const work = {
     id: crypto.randomUUID(),
     position: '',
@@ -39,7 +60,7 @@ export function addToState(category, data, setData) {
   if (category === 'work') {
     const experience = [...data.experience, work];
     setData({ ...data, experience: experience });
-    console.log('added work', experience);
+  
     return;
   }
 

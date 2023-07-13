@@ -1,6 +1,6 @@
-import { UniversityContainer } from '../../CVsettings/settingsBlock/education/universityContainer/UniversityContainer';
-import { PreviousWorkContainer } from '../../CVsettings/settingsBlock/experience/previousWorkContainer/PreviousWorkContainer';
-import cl from './overallData.module.scss';
+import { UniversityContainer } from "../../CVsettings/settingsBlock/education/universityContainer/UniversityContainer";
+import { PreviousWorkContainer } from "../../CVsettings/settingsBlock/experience/previousWorkContainer/PreviousWorkContainer";
+import cl from "./overallData.module.scss";
 
 export function OverallData({ data }) {
   const description = data.personalInfo.description;
@@ -23,7 +23,7 @@ export function OverallData({ data }) {
         ))}
       </div>
 
-      {/* <div className={cl.dataBlock} id={cl.education}>
+      <div className={cl.dataBlock} id={cl.education}>
         <div className={cl.title}>Education</div>
         {educationArr.map((university) => (
           <UniversityContainer
@@ -32,7 +32,7 @@ export function OverallData({ data }) {
             id={university.id}
           ></UniversityContainer>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 }
