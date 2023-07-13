@@ -1,7 +1,11 @@
 export function updateState(e, attr, data, work, setData) {
   const experience = [...data.experience].map((w) => {
+    
     if (w.id === work.id) {
       return { ...work, [attr]: e.target.value };
+    } else {
+
+    return w
     }
   });
   setData({ ...data, experience: experience });
