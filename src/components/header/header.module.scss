@@ -10,3 +10,9 @@
     color: white;
   }
 }
+
+@media print {
+  .header {
+    display: none;
+  }
+}

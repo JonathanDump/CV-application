@@ -24,7 +24,8 @@ export function InputContainer({ handleChange, label, type, value }) {
         <label htmlFor={style.input}>{label}</label>
         <div
           className={style.inputDescription}
-          onChange={handleChange}
+          onKeyUp={handleChange}
+          // onKeyUpCapture={handleChange}
           value={value}
           contentEditable="true"
         ></div>

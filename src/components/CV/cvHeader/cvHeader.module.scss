@@ -1,9 +1,7 @@
 @import "/src/scss/variables.scss";
 
 .header {
-  height: 264px;
-
-  // padding: 8px;
+  min-height: 264px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -15,5 +13,8 @@
 
   .title {
     font-size: 18px;
+  }
+  .text {
+    white-space: normal;
   }
 }

@@ -99,10 +99,13 @@ export function PersonalInfo({ data, setData }) {
           label="Description"
           type="long-text"
           handleChange={(e) => {
-            console.log(e.target.value);
+            console.log(e.target.textContent);
             setData({
               ...data,
-              personalInfo: { ...personalInfo, description: e.target.value },
+              personalInfo: {
+                ...personalInfo,
+                description: e.target.textContent,
+              },
             });
           }}
         ></InputContainer>
