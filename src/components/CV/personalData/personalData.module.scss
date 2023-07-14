@@ -1,3 +1,59 @@
+@import "/src/scss/variables.scss";
 .personalData {
-  border: 1px solid yellow;
+  background-color: $cvDark-color;
+  color: white;
+  min-width: 265px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 192px;
+    height: 192px;
+    border-radius: 50%;
+    align-self: center;
+    margin-top: 36px;
+
+    img {
+      // border-radius: 50%;
+      width: 192px;
+      // height: 288px;
+      // height: 192px;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: flex-start;
+    padding-left: 36px;
+
+    .title {
+      font-size: 22px;
+      border-bottom: 2px solid white;
+      width: 100%;
+      font-weight: 800;
+    }
+
+    .detailsItem {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      .itemTitle {
+        font-weight: 800;
+      }
+
+      .itemData {
+        font-weight: 300;
+      }
+    }
+  }
 }

@@ -1,3 +1,14 @@
+@import "/src/scss/variables.scss";
+
 .button {
-  background-color: aquamarine;
+  background-color: $light-blue;
+  border: none;
+  min-width: 70px;
+  padding: 8px;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: $dark-blue;
+    color: $header-color;
+  }
 }

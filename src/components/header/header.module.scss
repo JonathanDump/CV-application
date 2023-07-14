@@ -1,0 +1,12 @@
+@import "/src/scss/variables.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: $cvDark-color;
+  .title {
+    font-size: 32px;
+    color: white;
+  }
+}

@@ -8,11 +8,15 @@ export function InfoContainer({ category, work, university }) {
     return (
       <div className={cl.infoContainer}>
         <div className={cl.year}>
-          {work.from} - {work.to}
+          {work.from && format(parseISO(work.from), "MMM yyyy")} -{" "}
+          {work.to && format(parseISO(work.to), "MMM yyyy")}
         </div>
-        <div className={cl.boldRow}>{work.position}</div>
-        <div className={cl.row}>{work.company}</div>
-        <div className={cl.row}>{work.city}</div>
+
+        <div className={cl.row}>
+          {work.company} | {work.city}
+        </div>
+        <div className={cl.rowBold}>{work.position}</div>
+        {/* <div className={cl.row}>{work.city}</div> */}
       </div>
     );
   }
@@ -20,9 +24,10 @@ export function InfoContainer({ category, work, university }) {
   return (
     <div className={cl.infoContainer}>
       <div className={cl.year}>
-        {university.from} - {university.to}
+        {university.from && format(parseISO(university.from), "MMM yyyy")} -{" "}
+        {university.to && format(parseISO(university.to), "MMM yyyy")}
       </div>
-      <div className={cl.boldRow}>{university.university}</div>
+      <div className={cl.rowBold}>{university.university}</div>
       <div className={cl.row}>{university.city}</div>
       <div className={cl.row}>Degree: {university.degree}</div>
       <div className={cl.row}>Subject: {university.subject}</div>

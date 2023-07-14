@@ -1,5 +1,22 @@
 .cvBlock {
   display: flex;
-  flex: 1;
-  border: 2px solid red;
+  justify-content: center;
+  padding: 16px;
+
+  .cv {
+    top: 0;
+    width: 794px;
+    height: 1123px;
+    background-color: white;
+    // padding: 20px;
+    display: flex;
+    position: sticky;
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 22px;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import cl from './cvHeader.module.scss';
+import cl from "./cvHeader.module.scss";
 
 export function CVHeader({ personalInfo }) {
   return (
@@ -7,6 +7,7 @@ export function CVHeader({ personalInfo }) {
         {personalInfo.name} {personalInfo.lastName}
       </div>
       <div className={cl.title}>{personalInfo.title}</div>
+      <div className={cl.text}>{personalInfo.description}</div>
     </div>
   );
 }

@@ -7,11 +7,11 @@ export function OverallData({ data }) {
   const experienceArr = [...data.experience];
   const educationArr = data.education;
   return (
-    <div className={cl.overallData} id={cl.experience}>
-      <div className={cl.dataBlock}>
+    <div className={cl.overallData}>
+      {/* <div className={cl.dataBlock}>
         <div className={cl.title}>Description</div>
         <div className={cl.text}>{description}</div>
-      </div>
+      </div> */}
 
       <div className={cl.dataBlock}>
         <div className={cl.title}>Experience</div>

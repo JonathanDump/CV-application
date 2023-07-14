@@ -1,0 +1,9 @@
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  .rowBold {
+    font-weight: 800;
+  }
+}

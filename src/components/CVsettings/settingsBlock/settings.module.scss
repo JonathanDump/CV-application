@@ -1,4 +1,16 @@
 .settingsBlock {
   display: flex;
+  justify-content: center;
+  padding: 16px;
   flex: 1;
+
+  .settings {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    width: 500px;
+    border-radius: 16px;
+  }
 }

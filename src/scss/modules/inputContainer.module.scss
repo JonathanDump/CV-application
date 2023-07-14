@@ -1,0 +1,47 @@
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  .input {
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 0 6px;
+    transition: all 0.1s ease;
+    height: 2rem;
+
+    &:focus {
+      border: 1px solid black;
+      border-radius: 6px;
+    }
+  }
+
+  input[type="file"] {
+    border: none;
+    width: fit-content;
+  }
+
+  .inputDescription {
+    padding: 6px;
+    box-sizing: border-box;
+    width: 100%;
+    white-space: pre-line;
+    max-height: 150px;
+    overflow: auto;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    line-height: 1.3rem;
+    min-height: 2rem;
+    outline: none;
+    border-bottom: 1px solid black;
+    transition: all 0.1s ease;
+
+    &:focus {
+      border: 1px solid black;
+      border-radius: 6px;
+    }
+  }
+}

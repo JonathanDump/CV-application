@@ -1,5 +1,5 @@
-import cl from './header.module.scss';
-import style from '../../scss/modules/button.module.scss';
+import cl from "./header.module.scss";
+import style from "../../scss/modules/button.module.scss";
 
 export function Header() {
   return (

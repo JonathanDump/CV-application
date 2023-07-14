@@ -1,0 +1,11 @@
+.inputsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 16px;
+}
+
+.previous {
+  border: 1px dotted black;
+}

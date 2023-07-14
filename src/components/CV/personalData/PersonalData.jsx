@@ -4,7 +4,11 @@ export function PersonalData({ personalData }) {
   return (
     <div className={cl.personalData}>
       <div className={cl.imageContainer}>
-        <img src={personalData.photo} alt="" />
+        <img
+          src={personalData.photo}
+          alt=""
+          // style={{ backgroundImage: `url(${personalData.photo})` }}
+        />
       </div>
 
       <div className={cl.details}>
@@ -22,7 +26,7 @@ export function PersonalData({ personalData }) {
           </div>
         </div>
         <div className={cl.detailsItem}>
-          <div className={cl.itemTitle}>Address</div>
+          <div className={cl.itemTitle}>Location</div>
           <div className={cl.itemData} id={cl.addressData}>
             {personalData.location}
           </div>

@@ -1,0 +1,19 @@
+@import "/src/scss/variables.scss";
+
+.overallData {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .dataBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .title {
+      font-size: 22px;
+      font-weight: 800;
+      border-bottom: 2px solid $cvDark-color;
+    }
+  }
+}

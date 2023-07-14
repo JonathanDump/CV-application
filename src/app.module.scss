@@ -1,8 +1,12 @@
+@import "/src/scss/variables.scss";
+
 .app {
   display: flex;
   flex-direction: column;
 
   .main {
     display: flex;
+    background-color: $bg-color;
+    position: relative;
   }
 }

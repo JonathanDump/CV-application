@@ -1,28 +1,30 @@
-export function updateState(e, attr, data, object, setData, category) {
-  if (category === 'work') {
-   const experience = [...data.experience].map((w) => {
+export function updateState({target: {value}}, attr, data, object, setData, category) {
+//   if (category === 'work') {
+//    const experience = [...data.experience].map((w) => {
+//      return w.id === object.id ? { ...object, [attr]: value } : w;
+//    });
     
-    if (w.id === object.id) {
-      return { ...object, [attr]: e.target.value };
-    } else {
-
-    return w
-    }
-  });
-    setData({ ...data, experience: experience }); 
-    return
-  }
+//     setData({ ...data, experience: experience }); 
+//     return
+//   }
   
-const education = [...data.education].map((ed) => {
-    
-    if (ed.id === object.id) {
-      return { ...object, [attr]: e.target.value };
-    } else {
+// const education = [...data.education].map((ed) => {  
+//     if (ed.id === object.id) {
+//       return { ...object, [attr]: e.target.value };
+//     } else {
 
-    return ed
-    }
+//     return ed
+//     }
+//   });
+//   setData({ ...data, education: education }); 
+  
+
+  const part = category === 'work' ? 'experience' : 'education';
+  const result = [...data[part]].map((obj) => {
+     return obj.id === object.id ? { ...object, [attr]: value } : obj;
   });
-    setData({ ...data, education: education }); 
+  
+  setData({ ...data, [part]: result }); 
 }
 
 export function deleteFromState( obj, data, setData, category) {

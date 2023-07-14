@@ -6,11 +6,12 @@ import { InfoContainer } from "../../../../CV/overallData/infoContainer/infoCont
 import { InputContainer } from "../../../inputContainer/InputContainer";
 import cl from "./previousWorkContainer.module.scss";
 import style from "/src/scss/modules/button.module.scss";
+import inputs from "../../../../../scss/modules/inputsWrapper.module.scss";
 
 export function PreviousWorkContainer({ side, work, setData, data }) {
   if (side === "left") {
     return (
-      <div className={cl.previousWorkContainer}>
+      <div className={`${inputs.inputsWrapper} ${inputs.previous}`}>
         <InputContainer
           value={work.position}
           label="Position"
@@ -68,7 +69,7 @@ export function PreviousWorkContainer({ side, work, setData, data }) {
   }
 
   return (
-    <div className={cl.previousWorkContainer}>
+    <div className={`${inputs.inputsWrapper} `}>
       <InfoContainer category={"work"} work={work}></InfoContainer>
     </div>
   );
