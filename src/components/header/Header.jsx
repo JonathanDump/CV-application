@@ -5,7 +5,11 @@ export function Header() {
   return (
     <div className={cl.header}>
       <div className={cl.title}>CV creator</div>
-      <button type="button" className={style.button}>
+      <button
+        type="button"
+        className={style.button}
+        onClick={() => window.print()}
+      >
         Generate PDF
       </button>
     </div>

@@ -38,9 +38,6 @@ function App() {
       },
     ],
   });
-  useEffect(() => {
-    console.log("app data", data);
-  }, [data]);
 
   return (
     <div className={cl.app}>
