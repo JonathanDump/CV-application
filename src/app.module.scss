@@ -6,6 +6,7 @@
 
   .main {
     display: flex;
+    justify-content: space-around;
     background-color: $bg-color;
     position: relative;
     padding: 16px;
